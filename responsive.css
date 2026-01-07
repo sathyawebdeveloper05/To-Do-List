@@ -1,0 +1,918 @@
+/* ===========================================
+   RESPONSIVE STYLES - MOBILE FIRST APPROACH
+   =========================================== */
+
+/* Base mobile styles (already defined above) */
+
+/* Small tablets and large phones (600px and up) */
+@media (min-width: 600px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .reports-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .summary-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .chart-bars {
+        padding: 0 15px;
+    }
+    
+    .chart-day {
+        margin: 0 8px;
+    }
+    
+    .chart-bar {
+        width: 22px;
+    }
+    
+    .nav-item span:not(.task-count) {
+        display: inline !important;
+    }
+}
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+    .features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .reports-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .summary-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .content-header {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .filters {
+        width: auto;
+        justify-content: flex-start;
+    }
+    
+    .filter-btn {
+        flex: 0 1 auto;
+        min-width: 80px;
+    }
+    
+    .task-item-card {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .task-actions {
+        align-self: center;
+    }
+    
+    .chart-bars {
+        padding: 0 20px;
+    }
+    
+    .chart-day {
+        margin: 0 10px;
+    }
+    
+    .chart-bar {
+        width: 24px;
+    }
+    
+    .report-actions {
+        flex-direction: row;
+    }
+    
+    .modal-content {
+        width: 500px;
+        padding: 40px;
+    }
+}
+
+/* Small laptops (992px and up) */
+@media (min-width: 992px) {
+    .todo-container {
+        flex-direction: row;
+    }
+    
+    .sidebar {
+        width: 280px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .sidebar-header {
+        padding: 30px 20px;
+        border-bottom: 1px solid #eee;
+        display: block;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 0;
+    }
+    
+    .nav-item {
+        padding: 15px 25px;
+        border-left: 4px solid transparent;
+        border-bottom: none;
+        justify-content: flex-start;
+    }
+    
+    .nav-item.active {
+        border-left-color: #667eea;
+        border-bottom: none;
+    }
+    
+    .nav-item span:not(.task-count) {
+        display: inline;
+    }
+    
+    .task-count {
+        position: absolute;
+        right: 25px;
+        margin-left: 0;
+    }
+    
+    .sidebar-footer {
+        display: block;
+    }
+    
+    .main-content {
+        flex: 1;
+        padding: 30px;
+        max-width: calc(100% - 280px);
+    }
+    
+    .summary-cards {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .welcome-content {
+        padding: 50px 40px;
+    }
+    
+    .auth-card {
+        padding: 50px;
+    }
+    
+    .chart-bars {
+        padding: 0 30px;
+    }
+    
+    .chart-day {
+        margin: 0 15px;
+    }
+    
+    .chart-bar {
+        width: 28px;
+    }
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+    .sidebar {
+        width: 300px;
+    }
+    
+    .main-content {
+        max-width: calc(100% - 300px);
+    }
+    
+    .summary-cards {
+        grid-template-columns: 3fr 1fr;
+    }
+    
+    .breakdown-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .chart-bars {
+        padding: 0 40px;
+    }
+    
+    .chart-day {
+        margin: 0 20px;
+    }
+    
+    .chart-bar {
+        width: 30px;
+    }
+}
+
+/* ===========================================
+   MOBILE-SPECIFIC STYLES (max-width)
+   =========================================== */
+
+/* Large phones (max-width: 767px) */
+@media (max-width: 767px) {
+    /* Welcome & Auth Pages */
+    .welcome-container,
+    .auth-container {
+        padding: 15px;
+    }
+    
+    .welcome-content,
+    .auth-card {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    .welcome-logo h1 {
+        font-size: 1.8rem;
+    }
+    
+    .todo-logo h2 {
+        font-size: 1.3rem;
+    }
+    
+    .welcome-text h2 {
+        font-size: 1.4rem;
+    }
+    
+    .auth-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Task Items */
+    .task-item-card {
+        padding: 15px;
+    }
+    
+    .task-content h3 {
+        font-size: 1rem;
+    }
+    
+    .task-content p {
+        font-size: 0.85rem;
+    }
+    
+    .task-meta {
+        font-size: 0.8rem;
+        gap: 10px;
+    }
+    
+    .priority {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+    
+    /* Reports */
+    .report-number {
+        font-size: 2rem;
+    }
+    
+    .report-card h3 {
+        font-size: 0.9rem;
+    }
+    
+    .chart-percentage {
+        font-size: 1.3rem;
+    }
+    
+    .score-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .score-circle::before {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .score-circle span {
+        font-size: 1.5rem;
+    }
+    
+    /* Forms */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px;
+    }
+    
+    /* Navigation */
+    .nav-item {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .nav-item i {
+        font-size: 1.1rem;
+    }
+    
+    .task-count {
+        font-size: 0.75rem;
+        padding: 2px 8px;
+    }
+    
+    /* Animation adjustments */
+    .task-animation {
+        height: 80px;
+    }
+    
+    .task-item {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    
+    /* Modal */
+    .modal-content {
+        padding: 25px 20px;
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+    
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .welcome-logo h1 {
+        font-size: 1.6rem;
+    }
+    
+    .todo-logo h2 {
+        font-size: 1.2rem;
+    }
+    
+    .welcome-text h2 {
+        font-size: 1.3rem;
+    }
+    
+    .welcome-text p,
+    .auth-header p {
+        font-size: 1rem;
+    }
+    
+    .features {
+        gap: 10px;
+    }
+    
+    .feature {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .content-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .task-checkbox {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .task-actions .task-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .form-buttons .btn {
+        width: 100%;
+    }
+    
+    .chart-bars {
+        padding: 0 5px;
+    }
+    
+    .chart-day {
+        margin: 0 3px;
+    }
+    
+    .chart-bar {
+        width: 16px;
+    }
+    
+    .chart-day-label {
+        font-size: 0.75rem;
+    }
+    
+    .legend-item {
+        font-size: 0.8rem;
+    }
+    
+    .breakdown-item {
+        margin: 8px 0;
+    }
+    
+    .breakdown-label {
+        font-size: 0.85rem;
+    }
+    
+    .breakdown-value {
+        font-size: 0.8rem;
+        min-width: 70px;
+    }
+    
+    .task-title-small {
+        font-size: 0.85rem;
+    }
+    
+    .task-priority-small {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+    
+    .insight-item {
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+    
+    .report-header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Very small phones (max-width: 360px) */
+@media (max-width: 360px) {
+    .welcome-logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .auth-buttons {
+        gap: 10px;
+    }
+    
+    .sidebar-nav {
+        gap: 5px;
+    }
+    
+    .nav-item {
+        padding: 8px 10px;
+        min-width: 60px;
+    }
+    
+    .nav-item i {
+        font-size: 1rem;
+        margin-bottom: 2px;
+    }
+    
+    .task-count {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        font-size: 0.7rem;
+        padding: 1px 5px;
+    }
+    
+    .reports-grid {
+        gap: 10px;
+    }
+    
+    .report-card {
+        padding: 20px 15px;
+    }
+    
+    .report-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .report-number {
+        font-size: 1.8rem;
+    }
+    
+    .chart-bars {
+        padding: 0;
+    }
+    
+    .chart-day {
+        margin: 0 2px;
+    }
+    
+    .chart-bar {
+        width: 14px;
+    }
+}
+
+/* ===========================================
+   TABLET-SPECIFIC STYLES (768px - 991px)
+   =========================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+    .todo-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        height: auto;
+        position: relative;
+    }
+    
+    .sidebar-header {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex: 0 0 auto;
+    }
+    
+    .todo-logo {
+        margin-bottom: 0;
+    }
+    
+    .user-info {
+        display: none; /* Hide on tablet for space */
+    }
+    
+    .sidebar-nav {
+        flex: 1;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 15px;
+        padding: 0;
+    }
+    
+    .nav-item {
+        padding: 10px 15px;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+    
+    .nav-item.active {
+        border-left: none;
+        border-bottom-color: #667eea;
+    }
+    
+    .nav-item span:not(.task-count) {
+        display: none; /* Hide text, show only icons */
+    }
+    
+    .task-count {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        font-size: 0.7rem;
+        padding: 1px 6px;
+    }
+    
+    .sidebar-footer {
+        display: none;
+    }
+    
+    .main-content {
+        padding: 25px;
+        max-width: 100%;
+    }
+    
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-bars {
+        padding: 0 15px;
+    }
+    
+    .chart-day {
+        margin: 0 8px;
+    }
+    
+    .chart-bar {
+        width: 20px;
+    }
+}
+
+/* ===========================================
+   LANDSCAPE ORIENTATION
+   =========================================== */
+@media (max-height: 600px) and (orientation: landscape) {
+    .welcome-container,
+    .auth-container {
+        padding: 10px;
+    }
+    
+    .welcome-content,
+    .auth-card {
+        padding: 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .features {
+        margin: 15px 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .task-animation {
+        height: 60px;
+        margin: 10px 0;
+    }
+    
+    .auth-form {
+        margin-top: 15px;
+    }
+    
+    .form-options {
+        margin: 10px 0;
+    }
+    
+    .sidebar {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .main-content {
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .task-item-card {
+        padding: 12px 15px;
+    }
+    
+    .task-content h3 {
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+    
+    .task-content p {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    .task-meta {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===========================================
+   HIGH DPI / RETINA DISPLAYS
+   =========================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .btn,
+    .task-item-card,
+    .report-card,
+    .summary-card,
+    .breakdown-card {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    .sidebar {
+        box-shadow: 3px 0 10px rgba(0, 0, 0, 0.08);
+    }
+    
+    .modal-content {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* ===========================================
+   PRINT STYLES
+   =========================================== */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+    }
+    
+    .btn,
+    .sidebar,
+    .task-actions,
+    .report-actions,
+    .filters,
+    .modal,
+    .notification,
+    .back-btn,
+    .sidebar-footer,
+    .task-checkbox {
+        display: none !important;
+    }
+    
+    .main-content {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .report-container {
+        padding: 0 !important;
+    }
+    
+    .content-section {
+        display: block !important;
+        break-inside: avoid;
+    }
+    
+    .content-header {
+        margin-bottom: 15px !important;
+    }
+    
+    .content-header h1 {
+        font-size: 18pt !important;
+        color: black !important;
+    }
+    
+    .task-item-card,
+    .summary-card,
+    .chart-section,
+    .breakdown-card,
+    .insights-list,
+    .report-card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        margin-bottom: 15px !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .task-item-card {
+        border-left: 3px solid #667eea !important;
+    }
+    
+    .reports-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .report-number {
+        font-size: 16pt !important;
+    }
+    
+    .chart-fill,
+    .progress-fill,
+    .bar-fill {
+        background: #666 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .score-circle {
+        background: conic-gradient(#666 var(--score, 0%), #eee var(--score, 0%)) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: none !important;
+    }
+    
+    @page {
+        margin: 0.5in;
+    }
+}
+
+/* ===========================================
+   ACCESSIBILITY & PREFERENCE QUERIES
+   =========================================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .task-item-card:hover {
+        transform: none !important;
+    }
+    
+    .btn:hover {
+        transform: none !important;
+    }
+    
+    .notification {
+        transition: none !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+    
+    .task-item-card {
+        border: 1px solid #000;
+    }
+    
+    .progress-bar,
+    .chart-bar {
+        border: 1px solid #000;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    /* These styles would be added if you implement dark mode */
+    /* You can add dark mode styles here if needed */
+}
+
+/* ===========================================
+   UTILITY CLASSES FOR RESPONSIVE DESIGN
+   =========================================== */
+.hide-on-mobile {
+    display: none;
+}
+
+.show-on-mobile {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .hide-on-mobile {
+        display: block;
+    }
+    
+    .show-on-mobile {
+        display: none;
+    }
+}
+
+/* Flex utilities for responsive layouts */
+.flex-column-mobile {
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .flex-column-mobile {
+        flex-direction: row;
+    }
+}
+
+/* Grid utilities */
+.grid-1-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+    .grid-1-mobile {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-1-mobile {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Text size utilities */
+.text-sm-mobile {
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .text-sm-mobile {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo List - TodoMaster</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="todo-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-tasks"></i>
+                    <h2>TodoMaster</h2>
+                </div>
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="loggedInUser">User</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="tasksSection">
+                    <i class="fas fa-list-check"></i>
+                    <span>My Tasks</span>
+                    <span class="task-count" id="totalTasks">0</span>
+                </a>
+                <a href="#" class="nav-item" data-section="addTaskSection">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add New Task</span>
+                </a>
+                <a href="#" class="nav-item" data-section="reportsSection">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="report.html" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Weekly Report</span>
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="progress-card">
+                    <h4>Today's Progress</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill">0%</div>
+                    </div>
+                    <p>Completed: <span id="completedTasks">0</span>/<span id="totalTodayTasks">0</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Tasks Section -->
+            <section id="tasksSection" class="content-section active">
+                <div class="content-header">
+                    <h1>My Tasks</h1>
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="pending">Pending</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                </div>
+                
+                <div class="tasks-list" id="tasksList">
+                    <div class="empty-state">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>No tasks yet</h3>
+                        <p>Add your first task to get started!</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Add Task Section -->
+            <section id="addTaskSection" class="content-section">
+                <div class="content-header">
+                    <h1>Add New Task</h1>
+                </div>
+                
+                <form id="addTaskForm" class="task-form">
+                    <div class="form-group">
+                        <label for="taskTitle">
+                            <i class="fas fa-heading"></i> Task Title
+                        </label>
+                        <input type="text" id="taskTitle" required 
+                               placeholder="What needs to be done?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskDescription">
+                            <i class="fas fa-align-left"></i> Description
+                        </label>
+                        <textarea id="taskDescription" rows="3" 
+                                  placeholder="Add details about your task..."></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="taskPriority">
+                                <i class="fas fa-flag"></i> Priority
+                            </label>
+                            <select id="taskPriority">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="taskDueDate">
+                                <i class="fas fa-calendar"></i> Due Date
+                            </label>
+                            <input type="date" id="taskDueDate">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskCategory">
+                            <i class="fas fa-tag"></i> Category
+                        </label>
+                        <input type="text" id="taskCategory" 
+                               placeholder="Work, Personal, Shopping, etc.">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-submit">
+                        <i class="fas fa-plus"></i> Add Task
+                    </button>
+                </form>
+            </section>
+            
+            <!-- Reports Section -->
+            <section id="reportsSection" class="content-section">
+                <div class="content-header">
+                    <h1>Task Reports</h1>
+                </div>
+                
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Total Tasks</h3>
+                        <p class="report-number" id="reportTotalTasks">0</p>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="report-icon completed">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Completed</h3>
+                        <p class="report-number" id="reportCompletedTasks">0</p>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="report-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Pending</h3>
+                        <p class="report-number" id="reportPendingTasks">0</p>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="report-icon high">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <h3>High Priority</h3>
+                        <p class="report-number" id="reportHighPriority">0</p>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Completion Rate</h3>
+                    <div class="completion-chart">
+                        <div class="chart-bar" id="completionChart">
+                            <div class="chart-fill"></div>
+                        </div>
+                        <span class="chart-percentage" id="completionPercentage">0%</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Task Edit Modal -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Edit Task</h2>
+                <form id="editTaskForm">
+                    <!-- Form fields populated by JavaScript -->
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/storage.js"></script>
+    <script src="js/todo.js"></script>
+</body>
+</html>
