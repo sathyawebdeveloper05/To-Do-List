@@ -276,3 +276,4 @@ const storage = {
     setCurrentUser: (user) => localStorage.setItem('currentUser', JSON.stringify(user)),
     getCurrentUser: () => JSON.parse(localStorage.getItem('currentUser') || null)
 };
+
